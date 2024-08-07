@@ -13,7 +13,7 @@ const Home = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/users/all");
+      const res = await axios.get("https://usermanagement-hoisting.onrender.com/api/users/all");
       console.log("Fetched users:", res.data);
       setUsers(res.data);
     } catch (err) {
@@ -49,7 +49,7 @@ const Home = () => {
 
   const handleUpdate = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/users/update/${id}`, formData);
+      await axios.put(`https://usermanagement-hoisting.onrender.com/api/users/update/${id}`, formData);
       setUsers(
         users.map((user) => (user._id === id ? { ...user, ...formData } : user))
       );
@@ -61,7 +61,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/delete/${id}`);
+      await axios.delete(`https://usermanagement-hoisting.onrender.com/api/users/delete/${id}`);
       setUsers(users.filter((user) => user._id !== id));
     } catch (err) {
       console.error(err.message);

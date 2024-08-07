@@ -28,7 +28,7 @@ const Register = () => {
       };
       const body = JSON.stringify({ name, email, password, phone, profession });
       const res = await axios.post(
-        "http://localhost:5000/api/users/register",
+        "https://usermanagement-hoisting.onrender.com/api/users/register",
         body,
         config
       );
